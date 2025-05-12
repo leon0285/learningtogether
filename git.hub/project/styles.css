@@ -1,0 +1,750 @@
+@property --a {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to left, #000504, #3498db);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  width: 100%;
+}
+
+nav {
+  width: auto;
+  height: 50px;
+
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  position: relative;
+}
+
+nav a {
+  font-size: 3em;
+  font-weight: 500;
+  color: white;
+  text-decoration: none;
+  padding: 0 50px;
+  z-index: 1;
+}
+
+nav span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 220px;
+  height: 100%;
+  background: linear-gradient(45deg, #194b4f, #33fffc);
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+nav a:nth-child(1):hover ~ span { left: 620px; }
+nav a:nth-child(2):hover ~ span { left: 850px; }
+nav a:nth-child(3):hover ~ span { left: 1100px; }
+nav a:nth-child(4):hover ~ span { left: 1370px; }
+nav a:nth-child(5):hover ~ span { left: 1650px; }
+
+.title {
+  margin: 10px 0;
+  color: antiquewhi;
+  font-size: 60px;
+  text-align: center;
+  padding: 10px 20px;
+  border-radius: 10px;
+  width: 90%;
+  border: 5px  #45f3ff;
+}
+
+/* ===== BIGGER LOGIN BOX ===== */
+.box {
+  position: relative;
+  width: 800px; /* Increased size */
+  height: 900px; /* Increased height */
+  margin: 20px auto;
+  background: repeating-conic-gradient(
+    from var(--a),
+    #ff2770 0%,
+    #ff2770 5%,
+    transparent 5%,
+    transparent 40%,
+    #ff2770 50%
+  );
+  filter: drop-shadow(0 15px 50px #000);
+  animation: rotating 4s linear infinite;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+
+.box::before,
+.box::after {
+  content: "";
+  position: absolute;
+  border-radius: 25px;
+}
+
+.box::before {
+  width: 100%;
+  height: 100%;
+  background: repeating-conic-gradient(
+    from var(--a),
+    #45f3ff 0%,
+    #45f3ff 5%,
+    transparent 5%,
+    transparent 40%,
+    #45f3ff 50%
+  );
+  filter: drop-shadow(0 15px 50px #000);
+  animation: rotating 4s linear infinite;
+  animation-delay: -1s;
+}
+
+.box::after {
+  inset: 8px;
+  background: #2d2d39;
+  border: 10px solid #25252b;
+  border-radius: 20px;
+}
+
+/* family  logo*/
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items:flex-start;
+  gap: 60px;
+  flex-wrap: wrap; /* Allows stacking on small screens */
+  padding: 40px 5px;
+}
+.logo-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.logo-container {
+  flex: flex;
+  display:table-column;
+  align-items: center;
+}
+.logo {
+  margin-left: 100px;
+  height: 400px;
+  width: 400px;
+  border-radius: 50%;
+  border: 5px solid #45f3ff; /* Fixed border syntax */
+  box-shadow: 
+    0 0 40px #45f3ff,
+    0 0 80px #45f3ff,
+    0 0 120px #45f3ff;
+  object-fit: cover;
+
+  /* Add movement animation */
+  animation: floatUpDown 4s ease-in-out infinite;
+}
+@keyframes floatUpDown {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px); /* Move up */
+  }
+  100% {
+    transform: translateY(0px); /* Move back down */
+  }
+}
+
+.motivation-text {
+  max-width: 600px;
+  margin-top: 30px;
+  margin-right: 100px;
+  font-size: 30px;
+  line-height: 1.6;
+  color: #fff;
+  text-align: center;
+  padding:10px;
+  background: rgba(255, 0, 0, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+}
+
+
+
+
+/* ===== Login form ===== */
+.login {
+  position: absolute;
+  inset: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 40;
+  color: #fff;
+}
+
+.loginBx {
+  transform: translateY(0);
+  width: 100%;
+  max-width: 450px; /* Increased width */
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Increased gap */
+}
+
+.loginBx h2 {
+  text-align: center;
+  font-size: 48px; /* Increased font size */
+  color: #fff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.loginBx h2 i {
+  color: #ff2770;
+  margin: 0 6px;
+  text-shadow: 0 0 5px #ff2770, 0 0 30px #ff2770;
+}
+
+.loginBx form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.loginBx input[type="text"],
+.loginBx input[type="password"],
+.loginBx input[type="email"],
+.loginBx input[type="tel"] {
+  width: 100%; /* Make inputs fill the container */
+  padding: 18px 25px; /* Increased padding */
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 22px; /* Increased font size */
+  text-align: center;  /* Center the placeholder and the input text */
+}
+
+.loginBx input::placeholder {
+  text-align: center;  /* Center the placeholder text */
+  color: #bbb;
+  font-size: 20px; /* Increased font size */
+}
+
+.loginBx input[type="submit"] {
+  background-color: #45f3ff;
+  border: none;
+  color: #111;
+  padding: 18px;
+  font-size: 20px; /* Increased font size */
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.loginBx input[type="submit"]:hover {
+  box-shadow: 0 0 10px #45f3ff, 0 0 40px #45f3ff;
+}
+
+.form-options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px; /* Increased gap */
+  font-size: 18px; /* Increased font size */
+}
+
+.form-options label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #fff;
+}
+
+.form-options a {
+  color: #45f3ff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.form-options a:hover {
+  text-decoration: underline;
+}
+
+.register-btn {
+  padding: 12px 30px; /* Increased padding */
+  background: transparent;
+  border: 2px solid #45f3ff;
+  border-radius: 30px;
+  font-size: 18px; /* Increased font size */
+  transition: 0.3s;
+  color: #45f3ff;
+}
+
+.register-btn:hover {
+  background-color: #45f3ff;
+  color: #111;
+}
+
+/* === Animation Keyframes === */
+@keyframes rotating {
+  0% {
+    --a: 0deg;
+  }
+  100% {
+    --a: 360deg;
+  }
+}
+
+.tab-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.tab-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.tab-buttons button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  padding: 12px 36px;
+  margin: 0 5px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: 0.3s;
+}
+
+.tab-buttons button.active {
+  border-bottom: 3px solid #45f3ff;
+  color: #45f3ff;
+}
+
+#formBox {
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .box {
+    width: 90%;
+    height: auto;
+    padding: 10px 10px;
+  }
+
+  .login {
+    inset: 30px 20px;
+  }
+
+  .loginBx {
+    max-width: 100%;
+    gap: 10px;
+  }
+
+  .loginBx h2 {
+    font-size: 32px;
+  }
+
+  .loginBx input[type="text"],
+  .loginBx input[type="password"] {
+    font-size: 20px;
+    padding: 14px 18px;
+  }
+
+  .loginBx input[type="submit"],
+  .register-btn {
+    font-size: 18px;
+    padding: 14px 18px;
+  }
+
+  .form-options {
+    font-size: 16px;
+    gap: 12px;
+  }
+
+  .tab-buttons button {
+    font-size: 18px;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .loginBx h2 {
+    font-size: 28px;
+  }
+
+  .tab-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  nav a {
+    font-size: 2.5em;
+    padding: 0 20px;
+  }
+}
+/* title*/ 
+.title {
+  font-size: 70px;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: 'Poppins', sans-serif;
+  padding: 20px;
+  position: relative;
+  display: inline-block;
+
+  /* Gradient Text */
+  background: linear-gradient(90deg, #ff0080, #ff8c00, #ff0080);
+  background-size: 300%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+
+  /* Animations */
+  animation: neon 3s ease-in-out infinite alternate, shimmer-text 8s linear infinite, move-title 10s linear infinite;
+}
+@keyframes move-title {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20px); /* Move slightly to the right */
+  }
+  100% {
+    transform: translateX(0); /* Come back to original */
+  }
+}
+
+
+/*motivational text*/
+
+.neon-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #45f3ff; /* Neon green color */
+  text-shadow: 
+    0 0 5px   #45f3ff,
+    0 0 10px  #45f3ff,
+    0 0 20px   #45f3ff,
+    0 0 40px   #45f3ff,
+    0 0 90px   #45f3ff;/* Neon glow effect */
+}
+
+
+
+
+
+
+/* second part logos and text*/
+
+/* Gorgeous & Animated Step Cards */
+
+/* Wrapper for all cards */
+.afterjust {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
+}
+
+/* Individual card container */
+.step-card {
+  width: 480px;
+  height: 280px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Glowing hover effect */
+.step-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.15), transparent 70%);
+  transform: rotate(25deg);
+  animation: shimmer 6s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes shimmer {
+  0% { transform: translate(0, 0) rotate(25deg); }
+  50% { transform: translate(30px, 30px) rotate(25deg); }
+  100% { transform: translate(0, 0) rotate(25deg); }
+}
+
+/* Hover transformation */
+.step-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Image styling */
+.step-card img {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 30px;
+  border: 4px solid #45f3ff;
+  box-shadow: 0 0 20px #45f3ff80;
+  z-index: 1;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Content styling */
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1;
+}
+
+.step-title {
+  font-size: 30px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 12px;
+  font-family: 'Poppins', sans-serif;
+  animation: fadeInUp 1s ease both;
+}
+
+.step-text {
+  font-size: 18px;
+  color: #dcdcdc;
+  line-height: 1.6;
+  font-family: 'Poppins', sans-serif;
+  animation: fadeInUp 1.2s ease both;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .step-card {
+    flex-direction: column;
+    height: auto;
+    text-align: center;
+    padding: 30px 20px;
+  }
+
+  .step-card img {
+    margin: 0 auto 20px;
+  }
+
+  .card-content {
+    align-items: center;
+  }
+}
+.neon-text {
+  color: #00f0ff;
+  text-shadow:
+    0 0 5px #14adb8,
+    0 0 10px #00f0ff,
+    0 0 20px #00f0ff,
+    0 0 40px #00f0ff,
+    0 0 80px #00f0ff;
+  font-weight: bold;
+}
+
+
+
+/* About style page*/
+
+.about-container {
+  display: flex;
+  font-size: 5px;
+  width: 600px;
+  height:600px;
+ position: relative;
+background-color:#000000;
+border-radius: 50%;
+
+
+
+
+}
+
+/* Sun */
+.sun {
+  background-color: yellow;
+  width: 20em;
+  height: 20em;
+  position: absolute;
+  top: 50em;
+  left: 50em;
+  border-radius: 50%;
+
+}
+
+/* Earth orbiting Sun */
+.earth-orbit {
+  position: absolute;
+  width: 70em;
+  height: 70em;
+  top: 20em;
+  left: 20em;
+  animation: orbit 27s linear infinite;
+  transform-origin: 35em 35em;
+}
+
+/* Earth itself */
+.earth {
+  width: 5em;
+  height: 5em;
+  background-color: aqua;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 35em;
+  transform: translate(-50%);
+  z-index: 2;
+}
+
+/* Moon orbiting Earth */
+.moon-orbit {
+  position: absolute;
+  width: 20em;
+  height: 20em;
+  top: -7.5em;      /* Position so its center aligns with Earth */
+  left: 27.5em;
+  animation: orbit 3s linear infinite;
+  transform-origin: 10em 10em;
+}
+
+/* Moon itself */
+.moon {
+  width: 2em;
+  height: 2em;
+  background-color: silver;
+  border-radius: 50%;
+  position: absolute;
+  top: 10em;
+  left: 0;
+}
+
+/* Orbit animation */
+@keyframes orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.orbit-ring {
+  position: absolute;
+  border: 1em solid white;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.3;
+
+}
+
+/* Moon’s orbit path (around the Earth) */
+.moon-path {
+  width: 20em;
+  height: 20em;
+  top: 0;
+  left: 0;
+  clip-path: inset(50% 0 0 0); 
+}
+.earth-path {
+  width: 70em;
+  height: 70em;
+  top: 0;
+  left: 0;
+  border: 1em solid white;
+  border-radius: 50%;
+  opacity: 0.3;
+  pointer-events: none;
+
+  /* Only show half the orbit (left side, for example) */
+  clip-path:inset( 0 50% 0 0); 
+}
+.main-container{
+  display: flex ;
+
+}
+.time{
+  font-style: italic;
+  font-size: 30px;
+  color: rgb(218, 198, 198);
+}
+.time1{
+  font-size: 50px;
+  color: #45f3ff; /* Neon green color */
+  text-shadow: 
+    0 0 5px   #45f3ff,
+    0 0 10px  #45f3ff,
+    0 0 20px   #45f3ff,
+    0 0 40px   #45f3ff,
+    0 0 90px   #45f3ff;
+}
+.word{
+  color: #27494b; /* Neon green color */
+  text-shadow: 
+    0 0 5px   #45f3ff,
+    0 0 10px  #45f3ff,
+    0 0 20px   #45f3ff,
+    0 0 40px   #45f3ff,
+    0 0 90px   #45f3ff;
+}
+.hero-content{
+  padding-left: 200px;
+}

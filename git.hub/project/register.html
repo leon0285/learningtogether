@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Register - Patient Registration</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <div class="header">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#">About</a>
+      <a href="#">Product</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+      <span></span>
+    </nav>
+  </div>
+  <div class="box">
+    <div class="login">
+      <div class="loginBx">
+        <h2><i class="fa-solid fa-user-plus"></i> Register <i class="fa-solid fa-heart"></i></h2>
+        <form action="/register" method="post">
+          <div class="form-group">
+            <input type="text" name="fullname" placeholder="Full Name" required>
+            <input type="text" name="username" placeholder="Username" required>
+          </div>
+          <div class="form-group">
+            <input type="email" name="email" placeholder="Email Address" required>
+            <input type="tel" name="phone" placeholder="Phone Number" required>
+          </div>
+          <div class="form-group">
+            <input type="text" name="addressLine1" placeholder="Address Line 1" required>
+          </div>
+          <div class="form-group">
+            <input type="text" name="city" placeholder="City" required>
+            <input type="text" name="postcode" placeholder="Postcode" required>
+          </div>
+          <div class="form-group">
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="password" name="confirmPassword" placeholder="Confirm Password" required>
+          </div>
+          <input type="submit" value="Register">
+          <div class="form-options">
+            <a href="index.html" class="register-btn">Back to Login</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+
+
